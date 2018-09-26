@@ -2,22 +2,24 @@
 Material para a Disciplina Computação em Nuvem - Insper
 
 Organização dos roteiros:
-* R0 - Public Cloud
-* R1 - Metal as a Service
-* R2 - Juju
-* R3 - Openstack
-* R4 - Deployment
-* R5 - Kubernetes
-* R6 - A+
+* H0 - Public Cloud Intro
+* H1 - Bare Metal
+* H2 - Deployment Orchestration
+* H3 - Private Cloud Stack
+* H4 - Cloud Outtro
+* H5 - Container Orchestration
+* H6 - Continuous Integration/Continuous Delivery
+* H7 - Mastering Cloud Computing
 
 # Cloud Computing
 Handouts used in Cloud Computing discipline - Insper
 
 Organization:
-* R0 - Public Cloud
-* R1 - Metal as a Service
-* R2 - Juju
-* R3 - Openstack
-* R4 - Deployment
-* R5 - Kubernetes
-* R6 - A+
+* H0 - Public Cloud Intro
+* H1 - Bare Metal
+* H2 - Deployment Orchestration
+* H3 - Private Cloud Stack
+* H4 - Cloud Outtro
+* H5 - Container Orchestration
+* H6 - Continuous Integration/Continuous Delivery
+* H7 - Mastering Cloud Computing
