@@ -1,0 +1,46 @@
+pipeline {
+  environment {
+    registry = "[user]/aio-webserver"
+    registryCredential = 'dockerhub'
+    dockerImage = ''
+  }
+  agent {
+    kubernetes {
+      label 'jenkins-build'  // pod prefix
+      yamlFile 'build-pod.yaml'  // pod creator yaml file
+      defaultContainer 'docker'
+    }
+  }
+  stages {
+    stage('Testing') {
+      steps {
+        container('python') {
+          sh 'python senha_teste.py'
+        }
+      }
+    }
+    stage('Building image') {
+      steps {
+        script {
+          dockerImage = docker.build registry + ":$BUILD_NUMBER"
+        }
+      }
+    }
+    stage('Pushing image') {
+      steps {
+        script {
+          docker.withRegistry( '', registryCredential ) {
+            dockerImage.push()
+          }
+        }
+      }
+    }
+    stage('Removing local image') {
+      steps {
+        script {
+          sh "docker rmi $registry:$BUILD_NUMBER"
+        }
+      }
+    }
+  }
+}

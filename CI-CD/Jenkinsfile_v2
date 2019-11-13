@@ -1,0 +1,38 @@
+pipeline {
+  environment {
+    registry = "[user]/aio-webserver"
+    registryCredential = 'dockerhub'
+    dockerImage = ''
+  }
+  agent any
+  stages {
+    stage('Testing') {
+      steps {
+        script {
+          sh 'python senha_teste.py'
+        }
+      }
+    }
+    stage('Building image') {
+      steps {
+          script {
+          dockerImage = docker.build registry + ":$BUILD_NUMBER"
+        }
+      }
+    }
+    stage('Pushing image') {
+      steps {
+        script {
+          docker.withRegistry( '', registryCredential ) {
+            dockerImage.push()
+          }
+        }
+      }
+    }
+    stage('Removing local image') {
+      steps {
+        sh "docker rmi $registry:$BUILD_NUMBER"
+      }
+    }
+  }
+}

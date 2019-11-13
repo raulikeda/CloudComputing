@@ -1,0 +1,17 @@
+pipeline {
+  agent any
+  stages {
+    stage('Cloning Git') {
+      steps {
+        git '[endereço do git]'
+      }
+    }
+    stage('Testing') {
+      steps {
+        script {
+          sh 'python senha_teste.py'
+        }
+      }
+    }
+  }
+}
