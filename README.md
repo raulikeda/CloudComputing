@@ -9,7 +9,6 @@ Organização dos roteiros:
 * H4 - Cloud Outtro
 * H5 - Container Orchestration
 * H6 - Continuous Integration/Continuous Delivery
-* H7 - Mastering Cloud Computing
 
 # Cloud Computing
 Handouts used in Cloud Computing discipline - Insper
@@ -22,7 +21,6 @@ Organization:
 * H4 - Cloud Outtro
 * H5 - Container Orchestration
 * H6 - Continuous Integration/Continuous Delivery
-* H7 - Mastering Cloud Computing
 
 
 This project is licensed under the terms of the CC BY-NC-ND 3.0.
